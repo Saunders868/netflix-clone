@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
+import FavoriteButton from "../FavoriteButton";
 
 interface MovieCardP {
   data: Record<string, any>;
@@ -42,6 +43,7 @@ const MovieCard: React.FC<MovieCardP> = ({ data }) => {
             <div onClick={() => {}} className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-white rounded-full flex justify-center items-center transition hover:bg-neutral-300">
               <BsFillPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={data?.id} />
           </div>
 
           <p className="text-green-400 font-semibold mt-4">
@@ -56,7 +58,7 @@ const MovieCard: React.FC<MovieCardP> = ({ data }) => {
 
           <div className="flex flex-row mt-4 gap-2 items-center">
             <p className="text-white text-[10px] lg:text-sm">
-              {data.genre}
+              {data.genre}  
             </p>
           </div>
         </div>
